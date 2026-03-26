@@ -19,9 +19,12 @@ export default defineUniPages({
     },
   },
   // tabbar 的配置统一在 “./src/tabbar/config.ts” 文件中
-  subPackages: [{
-    root: 'pages-demo',
-    pages: [],
-  }],
+  subPackages: [
+    { root: 'pages-demo', pages: [] },
+    { root: 'subPackages/song', pages: [] },
+    { root: 'subPackages/lyric-card', pages: [] },
+    { root: 'subPackages/profile', pages: [] },
+    { root: 'subPackages/level', pages: [] },
+  ],
   tabBar: tabBar as any,
 })

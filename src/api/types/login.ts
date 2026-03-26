@@ -1,3 +1,5 @@
+import type { UserLevel } from './growth'
+
 // 认证模式类型
 export type AuthMode = 'single' | 'double'
 
@@ -25,6 +27,7 @@ export type IAuthLoginRes = ISingleTokenRes | IDoubleTokenRes
  */
 export type UserRole = string
 
+
 export interface IUserInfoRes {
   userId: number
   username: string
@@ -33,6 +36,14 @@ export interface IUserInfoRes {
   /** 同时支持单角色和多角色，你自行选择一种就行 */
   role?: UserRole
   roles?: UserRole[]
+  
+  // 新增业务字段
+  level?: UserLevel           // 当前等级 0-3
+  inspirePoints?: number      // 灵感值（积分）
+  joinDays?: number           // 入圈天数
+  firstSongId?: number       // 第一首听的歌ID
+  spiritualTags?: string[]    // 精神属性标签 ['歌词控', '深夜灵魂']
+  
   [key: string]: any // 允许其他扩展字段
 }
 
